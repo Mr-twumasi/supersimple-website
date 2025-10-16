@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Media & Sermons | Liberty Chapel International</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container" style="padding-top:34px;">
+    <h2>Sermons & Media</h2>
+    <p style="color:var(--muted); max-width:900px; margin:6px auto 18px;">Watch our live services, browse recent sermons, and download sermon notes.</p>
+
+    <!-- Live stream embed -->
+    <section class="card" style="max-width:980px; margin: 12px auto;">
+      <h3>Live Stream</h3>
+      <div style="position:relative;padding-top:56.25%; overflow:hidden; border-radius:8px; margin-top:10px;">
+        <!-- Replace YOUR_CHANNEL_ID with your actual channel id or use video id -->
+        <iframe src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+          style="position:absolute; inset:0; width:100%; height:100%;"></iframe>
+      </div>
+    </section>
+
+    <!-- Recent sermons -->
+    <section style="margin-top:18px;">
+      <div class="container-cards">
+        <article class="card">
+          <h3>Walking in Freedom</h3>
+          <p>Pastor John Doe — Sep 2025</p>
+          <p><a href="#" class="btn">Watch</a> <a href="#" class="btn btn-alt">Transcript</a></p>
+        </article>
+
+        <article class="card">
+          <h3>The Power of Prayer</h3>
+          <p>Pastor Jane Doe — Aug 2025</p>
+          <p><a href="#" class="btn">Watch</a> <a href="#" class="btn btn-alt">Download Notes</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Faith That Moves Mountains</h3>
+          <p>Guest Speaker — Jul 2025</p>
+          <p><a href="#" class="btn">Watch</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>

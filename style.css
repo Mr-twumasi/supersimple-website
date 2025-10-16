@@ -1,0 +1,549 @@
+/* ---------------- Reset ---------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #5f7061;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ---------------- Dark Mode ---------------- */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .navbar {
+  background-color: #1e1e1e;
+}
+
+body.dark footer {
+  background-color: #1e1e1e;
+}
+
+body.dark .card {
+  background: rgba(30,30,30,0.25);
+  border: 1px solid rgba(255,255,255,0.05);
+  color: #ddd;
+}
+
+body.dark a {
+  color: #f39c12;
+}
+
+body.dark .search-container input {
+  background: rgba(255,255,255,0.05);
+  color: #eee;
+}
+
+body.dark .hero .btn {
+  box-shadow: 0 5px 15px rgba(243,156,18,0.3);
+}
+
+body.dark .hero .btn-alt {
+  box-shadow: 0 5px 15px rgba(52,152,219,0.3);
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2f502c;
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 45px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #f39c12;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #f39c12;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Dark mode toggle */
+.toggle-theme {
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.toggle-theme:hover {
+  transform: scale(1.2);
+  color: #f39c12;
+}
+
+/* ---------------- Search Bar ---------------- */
+.search-container {
+  position: relative;
+  margin-left: 15px;
+}
+
+.search-container input {
+  padding: 6px 35px 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.2);
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.search-container input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.search-container input:focus {
+  border-color: #f39c12;
+}
+
+.search-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ---------------- Hero ---------------- */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.6)), url("images/church-bg.jpg") center/cover no-repeat;
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  animation: fadeInUp 1s ease;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+
+/* Buttons */
+.hero .btn, .hero .btn-alt {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.hero .btn {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  box-shadow: 0 5px 15px rgba(243,156,18,0.4);
+}
+
+.hero .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(243,156,18,0.5);
+}
+
+.hero .btn-alt {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  box-shadow: 0 5px 15px rgba(52,152,219,0.4);
+}
+
+.hero .btn-alt:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(52,152,219,0.5);
+}
+
+/* ---------------- Sections ---------------- */
+section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 25px;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #f39c12;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ---------------- Cards (Glassmorphic) ---------------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+  background-color: #333; /* dark gray background */
+  color: #fff; /* white text */
+  padding: 40px 0;
+}
+
+.footer-column {
+  flex-basis: 20%; /* adjust column width */
+  background: #121212; /* darker background for columns */
+  margin: 10px; /* adjust column spacing */
+  font-size: 16px; /* increase font size */
+  font-family: Arial, sans-serif; /* change font family */
+}
+
+.footer-column h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-socials a {
+  margin-right: 10px;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.footer-socials a:hover {
+  color: #ccc;
+}
+
+.footer-form input[type="email"], .footer-form input[type="text"], .footer-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.footer-form button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #444;
+}
+
+
+
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #34495e;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+/* ---------------- Animations ---------------- */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ---------------- Smooth Transitions ---------------- */
+*, .card, .btn, .hero, footer {
+  transition: all 0.3s ease;
+}
+
+/* Glassmorphic Footer Styling */
+footer {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  color: #222020;
+  padding: 60px 20px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+  border-radius: 20px 20px 0 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Footer Columns */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-column {
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.footer-column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.footer-column h4 {
+  margin-bottom: 15px;
+  color: #1e90ff;
+  font-size: 1.2rem;
+}
+
+/* List Items */
+.footer-column ul {
+  list-style: none;
+  color: #fff;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.footer-column ul li i {
+  color: #1e90ff;
+  min-width: 20px;
+  font-size: 1rem;
+}
+
+/* Social Media */
+.footer-socials {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-socials a {
+  color: #1e90ff;
+  font-size: 1.3rem;
+  background: rgb(255, 244, 244);
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background: #121212;
+  color: #ffff;
+  transform: scale(1.2);
+}
+
+/* Footer Forms */
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-form input,
+.footer-form textarea {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+
+.footer-form input::placeholder,
+.footer-form textarea::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.footer-form button {
+  background: #1e90ff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.footer-form button:hover {
+  background: #1c86ee;
+  transform: scale(1.05);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 25px;
+  font-size: 0.85rem;
+}
+
+.footer-bottom img {
+  margin-bottom: 10px;
+  max-width: 180px;
+}
+
+.footer-bottom p {
+  line-height: 1.4;
+}
+
+.footer-bottom p a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.footer-bottom p a:hover {
+  text-decoration: underline;
+}

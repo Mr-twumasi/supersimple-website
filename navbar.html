@@ -1,12 +1,13 @@
 <header>
   <nav class="navbar">
     <div class="logo">
-      <img src="Image/logo.png.jpeg" alt="WLCI Logo" class="logo-img">
+      <img src="Image/logo.png.jpeg" alt="Word Liberty Chapel International Logo" class="logo-img">
       <a href="index.html"> Word Liberty Chapel <span>International</span></a>
     </div>
-    <div class="search-container">
+    <!-- Added aria-label for better accessibility -->
+    <div class="search-container" aria-label="Search bar">
       <input type="text" id="searchInput" placeholder="Search...">
-      <button class="search-btn">🔍</button>
+      <button class="search-btn" aria-label="Search">🔍</button>
     </div>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
@@ -14,10 +15,12 @@
       <li><a href="ministries.html">Ministries</a></li>
       <li><a href="media.html">Media</a></li>
       <li><a href="events.html">Events</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
       <li><a href="give.html">Give</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="toggle-theme" id="themeToggle">🌙</div>
-    <div class="hamburger" id="hamburger">☰</div>
+  
+    <div class="toggle-theme" id="themeToggle" aria-label="Toggle theme">🌙</div>
+    <div class="hamburger" id="hamburger" aria-label="Menu">☰</div>
   </nav>
 </header>
